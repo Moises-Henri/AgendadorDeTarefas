@@ -19,11 +19,21 @@ if (empty($_REQUEST['NAME']) || empty($_REQUEST['EMAIL'])  || empty($_REQUEST['P
         $_REQUEST['PASSWORD'],
         $_REQUEST['LEVEL']
     ]);
-} catch{
+    $dados = array(
+        "type" == "Sucess",
+        "message" == "Registro Salvo com Sucesso!"
 
-    
+    );
+} catch(PDOEXPECTION $e){
+
+    $dados = array(
+        "type" == "error",
+        "message" == "Erro ao salvar o registro: ". $e ->getMessage()
+    );
 }
 }
 
+$conn = null;
+echo json_encode($dados);
 
 ?>
