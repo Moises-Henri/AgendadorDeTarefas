@@ -1,9 +1,10 @@
 <?php
 
 include("../../connection/conn.php");
+date_default_timezone_set('America/Sao_Paulo');
+$dataLocal = data('Y-m-d H:i:s', time());
 
-if (empty($_POST['NAME']) || empty($_POST['EMAIL'])  || empty($_POST['PASSWORD'])  || 
-  empty($_POST['LEVEL'])) {
+if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
     $dados = array(
         "type" => "error",
         "message" => "Existe(m) campo(s) obrigatorio(s) nao preenchido(s)"
@@ -11,13 +12,14 @@ if (empty($_POST['NAME']) || empty($_POST['EMAIL'])  || empty($_POST['PASSWORD']
     );
 } else {
     try{
-    $sql = "INSERT INTO USER (NAME, EMAIL, PASSWORD, LEVEL) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO TASK (DATE_TIME, TITLE, DESCRIPTION, STATUS, USER_ID) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
-        $_POST['NAME'],
-        $_POST['EMAIL'],
-        $_POST['PASSWORD'],
-        $_POST['LEVEL']
+        $dataLocal,
+        $_POST['TITLE'],
+        $_POST['DESCRIPTION'],
+        '1',
+        $_POST['USER_ID']
     ]);
      $dados = array(
         "type" => "success",
