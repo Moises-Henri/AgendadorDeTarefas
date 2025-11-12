@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Systask</title>
+    <link rel="stylesheet" href="../vendor/FontAwesome/css/all.css">
+    <link rel="stylesheet" href="frontend/assets/css/login.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../vendor/switchalert/dist/sweetalert2.css">
+    <script src="../vendor/jQuery/jquery-3.7.1.min.js" defer></script>
+    <script src="../vendor/bootstrap/js/bootstrap.js" defer></script>
+    <script src="../vendor/switchalert/dist/sweetalert2.all.js" defer></script>
+</head>
+<body>
+
+
+    <!---Navbar topo-->
+
+    <nav class="navbar navbar-expanded-lg navbar-light bg-info fixed-top">
+        <a class="navbar-brand text-white"><strong>SysTask</strong></a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" href="#"><i class="fa-solid fa-gauge-high "></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"><i class="fa-solid fa-user"></i> Perfil</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+     <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-12 col-sm-3 col-md-3 mt-3 mt-sm-5 mt-md-5">
+                <div class="alert alert-primary p-3 text-center shadow">
+                    <h1 class="text-center">
+                        <i class="fa-solid fa-bars-progress"></i> 10
+                    </h1>
+                    <span class="text-center">Tarefas a realizar</span>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-3 col-md-3 mt-sm-5 mt-md-5">
+                <div class="alert alert-warning p-3 text-center shadow">
+                    <h1 class="text-center">
+                        <i class="fa-solid fa-list-check"></i> 08
+                    </h1>
+                    <span class="text-center">Tarefas em andamento</span>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-3 col-md-3 mt-sm-5 mt-md-5">
+                <div class="alert alert-success p-3 text-center shadow">
+                    <h1 class="text-center">
+                        <i class="fa-solid fa-thumbs-up"></i> 15
+                    </h1>
+                    <span class="text-center">Tarefas finalizadas</span>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-3 col-md-3 mt-sm-5 mt-md-5">
+                <div class="alert alert-danger p-3 text-center shadow">
+                    <h1 class="text-center">
+                        <i class="fa-solid fa-trash-can"></i> 09
+                    </h1>
+                    <span class="text-center">Tarefas canceladas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
