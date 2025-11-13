@@ -1,8 +1,6 @@
 <?php
 
 include("../../connection/conn.php");
-date_default_timezone_set('America/Sao_Paulo');
-$dataLocal = data('Y-m-d H:i:s', time());
 
 if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
     $dados = array(
@@ -15,7 +13,7 @@ if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
     $sql = "INSERT INTO TASK (DATE_TIME, TITLE, DESCRIPTION, STATUS, USER_ID) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
-        $dataLocal,
+        $_POST['DATE_TIME'],
         $_POST['TITLE'],
         $_POST['DESCRIPTION'],
         '1',

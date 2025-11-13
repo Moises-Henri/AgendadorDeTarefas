@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Systask</title>
     <link rel="stylesheet" href="../vendor/FontAwesome/css/all.css">
-    <link rel="stylesheet" href="frontend/assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../vendor/switchalert/dist/sweetalert2.css">
     <script src="../vendor/jQuery/jquery-3.7.1.min.js" defer></script>
     <script src="../vendor/bootstrap/js/bootstrap.js" defer></script>
     <script src="../vendor/switchalert/dist/sweetalert2.all.js" defer></script>
+    <script src="../controllers/task/create.js" defer></script>
 </head>
 <body>
 
@@ -74,6 +75,104 @@
                 </div>
             </div>
         </div>
+
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-12 col-sm-10">
+                                <h4 class="text-info">Gerenciador de Tarefas</h4>
+                            </div>
+                            <div class="col-12 col-sm-2">
+                                <button class="btn btn-info btn-block btn-new">
+                                    <i class="fa-solid fa-plus"></i> Novo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Tarefa</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">00</td>
+                                        <td class="text-left">Tarefa 0000</td>
+                                        <td class="text-center"><h5><span class="badge badge-primary">A Realizar</span></h5></td>
+                                        <td class="text-center">
+                                            <button class="btn btn-info btn-view">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-primary btn-edit">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="btn btn-warning btn-status">
+                                                <i class="fa-solid fa-circle-check"></i>
+                                            </button>
+                                            <button class="btn btn-danger btn-delete">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-center">
+                           <i class="fa-solid fa-asterisk"></i> Desenvolvido por Moisés <i class="fa-solid fa-asterisk"></i> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div id="modal-task" class="modal fade" tabindex="1" data-backdrop="static" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="my-modal-title">Gerenciador de Tarefas</h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form-task">
+                    <div class="form-group row">
+                        <div class="col-12 col-sm-4">
+                        <label>Data/Hora</label>
+                        <input type="datetime-local" name="DATE_TIME" id="DATE_TIME" class="form-control">
+                        </div>
+                        <div class="col-12 col-sm-8">
+                            <label>Título da tarefa</label>
+                            <input type="text" name="TITLE" id="TITLE" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição da Tarefa</label>
+                        <textarea name="DESCRIPTION" id="DESCRIPTION" class="form-control" rows="5"></textarea>
+                    </div>
+                    <input type="hidden" name="USER_ID" id="USER_ID" value="1">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-save"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                <button class="btn btn-danger" data-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i> Fechar</button>
+            </div>
+        </div>
+     </div>
+    </div>
+    
 </body>
 </html>
