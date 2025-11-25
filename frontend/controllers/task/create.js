@@ -3,6 +3,10 @@ $(document).ready(function(){
     $('.btn-new').click(function(e){
         e.preventDefault()
         $('#modal-task').modal('show')
+        $('#form-task')[0].reset()
+        $(':input').attr('disabled', false)
+        $('.btn-save').show()
+        $('.btn-update').hide()
     })
 
     $('.btn-save').click(function(e){
@@ -23,6 +27,7 @@ $(document).ready(function(){
                 });
                 $('#modal-task').modal('hide')
                 $('#form-task')[0].reset()
+                location.reload()
  
             }
         })

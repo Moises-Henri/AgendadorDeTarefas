@@ -1,9 +1,6 @@
 <?php
 
 include("../../connection/conn.php");
-date_default_timezone_set('America/Sao_Paulo');
-$dataLocal = data('Y-m-d H:i:s', time());
-
 if (empty($_POST['ID'])) {
     $dados = array(
         "type" => "error",
@@ -15,18 +12,18 @@ if (empty($_POST['ID'])) {
     $sql = "UPDATE TASK SET STATUS = ? WHERE ID = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
-        '4',
+        $_POST['STATUS']
         $_POST['ID']
     ]);
      $dados = array(
         "type" => "success",
-        "message" => "Registro cancelado com sucesso!"
+        "message" => "Status Atualizado com sucesso!"
 
     );
 } catch(PDOException $e){
  $dados = array(
         "type" => "error",
-        "message" => "Erro ao cancelar o Registro: ". $e->getMessage()
+        "message" => "Erro ao atualizar o Status: ". $e->getMessage()
 
     );
 }

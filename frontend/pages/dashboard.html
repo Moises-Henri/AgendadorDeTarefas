@@ -13,6 +13,7 @@
     <script src="../vendor/switchalert/dist/sweetalert2.all.js" defer></script>
     <script src="../controllers/task/create.js" defer></script>
     <script src="../controllers/task/read.js" defer></script>
+   
 
 </head>
 <body>
@@ -167,10 +168,12 @@
                         <textarea name="DESCRIPTION" id="DESCRIPTION" class="form-control" rows="5"></textarea>
                     </div>
                     <input type="hidden" name="USER_ID" id="USER_ID" value="1">
+                    <input type="hidden" name="ID" id="ID" value="">
                 </form>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-success btn-save"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                <button class="btn btn-success btn-update"><i class="fa-solid fa-floppy-disk"></i> Atualizar</button>
                 <button class="btn btn-danger" data-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i> Fechar</button>
             </div>
         </div>
