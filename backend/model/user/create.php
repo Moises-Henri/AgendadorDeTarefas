@@ -18,10 +18,7 @@ if (empty($_POST['NAME']) || empty($_POST['EMAIL'])  || empty($_POST['PASSWORD']
         $_POST['EMAIL'],
         $_POST['PASSWORD'],
         $_POST['LEVEL']
-    ])
-}
-};
-<<<<<<< HEAD
+    ]);
      $dados = array(
         "type" => "success",
         "message" => "Registro salvo com sucesso!"
@@ -34,19 +31,6 @@ if (empty($_POST['NAME']) || empty($_POST['EMAIL'])  || empty($_POST['PASSWORD']
 
     );
     
-=======
-    $dados = array(
-        "type" == "Sucess",
-        "message" == "Registro Salvo com Sucesso!"
-
-    );
-} catch(PDOEXPECTION $e){
-
-    $dados = array(
-        "type" == "error",
-        "message" == "Erro ao salvar o registro: ". $e ->getMessage()
-    );
->>>>>>> a5e2cfa84056cb2e12bb999172d56a72f87ef151
 }
 }
 

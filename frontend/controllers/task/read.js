@@ -13,7 +13,7 @@ $(document).ready(function(){
             $('tbody').empty()
             for (var i = 0; i < dados.length; i++){
                 let nameStatus
-                let Color
+                let color
                 switch (dados[i].STATUS) {
          case '1':
         nameStatus = 'Pendente'

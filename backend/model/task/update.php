@@ -2,7 +2,7 @@
 
 include("../../connection/conn.php");
 date_default_timezone_set('America/Sao_Paulo');
-$dataLocal = data('Y-m-d H:i:s', time());
+$dataLocal = date('Y-m-d H:i:s', time());
 
 if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
     $dados = array(
@@ -15,7 +15,6 @@ if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
     $sql = "UPDATE TASK SET TITLE = ?, DESCRIPTION = ?, DATE_TIME = ? WHERE ID = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
-        $dataLocal,
         $_POST['TITLE'],
         $_POST['DESCRIPTION'],
         $dataLocal,
