@@ -23,17 +23,16 @@ if (empty($_POST['NAME']) || empty($_POST['EMAIL'])  || empty($_POST['PASSWORD']
         "type" => "success",
         "message" => "Registro salvo com sucesso!"
 
-    );
+    );;
 } catch(PDOException $e){
  $dados = array(
         "type" => "error",
         "message" => "Erro ao salvar Registro: ". $e->getMessage()
 
     );
-    
-}
-}
 
+}
+}
 $conn = null;
 echo json_encode($dados);
 
