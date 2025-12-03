@@ -12,7 +12,7 @@ if (empty($_POST['ID'])) {
     $sql = "UPDATE TASK SET STATUS = ? WHERE ID = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
-        $_POST['STATUS']
+        $_POST['STATUS'],
         $_POST['ID']
     ]);
      $dados = array(

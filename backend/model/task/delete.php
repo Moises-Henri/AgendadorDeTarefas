@@ -2,7 +2,7 @@
 
 include("../../connection/conn.php");
 date_default_timezone_set('America/Sao_Paulo');
-$dataLocal = data('Y-m-d H:i:s', time());
+$dataLocal = date('Y-m-d H:i:s', time());
 
 if (empty($_POST['ID'])) {
     $dados = array(

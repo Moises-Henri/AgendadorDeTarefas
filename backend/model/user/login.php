@@ -6,22 +6,22 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([
        $_POST['EMAIL'],
        $_POST['PASSWORD'],
-    ])
-    while ($resultado = $stmt -> fetch(PDO::FETCH_ASSOC);){
-    if($resultado['achou'] = '1'){
+]);
+    while ($resultado = $stmt -> fetch(PDO::FETCH_ASSOC)){
+    if($resultado['achou'] == '1'){
     session_start();
     $_SESSION['NAME'] = $resultado['NAME'];
     $_SESSION['EMAIL'] = $resultado['EMAIL'];
     $_SESSION['LEVEL'] = $resultado['LEVEL'];
     $_SESSION['ID'] = $resultado['ID'];
     $dados = array(
-        'type' = 'sucess',
-        'message' = 'Login realizado com sucesso!'
+        'type' => 'sucess',
+        'message' => 'Login realizado com sucesso!'
     );
 } else{
     $dados = array(
-        'type' = 'Erro',
-        'message' = 'Email ou Senha incorreto'
+        'type' => 'Erro',
+        'message' => 'Email ou Senha incorreto'
     );
  } 
 }

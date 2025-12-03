@@ -1,9 +1,6 @@
 $(document).ready(function(){
 
-    $('.btn-save').click(function(e){
-        e.preventDefault()
-        var dados = $('#form-task').serialize()
-        console.log(dados)
+
         $.ajax({
             type: 'POST',
             dataType: 'JSON',
@@ -13,7 +10,7 @@ $(document).ready(function(){
             $('tbody').empty()
             for (var i = 0; i < dados.length; i++){
                 let nameStatus
-                let Color
+                let color
                 switch (dados[i].STATUS) {
          case '1':
         nameStatus = 'Pendente'
@@ -25,7 +22,7 @@ $(document).ready(function(){
         break;
          case '3':
         nameStatus = 'Finalizada'
-        color = 'badge-sucess'
+        color = 'badge-success'
         break;
          case '4':
         nameStatus = 'Cancelada'
@@ -56,12 +53,9 @@ $(document).ready(function(){
                        </tr>
                                 `)
             }
-            $('body').append('<script src="../controllers/task/view.js"></script>')
-            $('body').append('<script src="../controllers/task/update.js"></script>')
-            $('body').append('<script src="../controllers/task/delete.js"></script>')
-            $('body').append('<script src="../controllers/task/status.js"></script>')
+            
             }
         })
     })
 
-})
+
