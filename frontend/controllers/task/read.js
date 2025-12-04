@@ -53,10 +53,7 @@ $(document).ready(function(){
                        </tr>
                                 `)
             }
-            $('body').append('<script src="../controllers/task/view.js"></script>')
-            $('body').append('<script src="../controllers/task/update.js"></script>')
-            $('body').append('<script src="../controllers/task/delete.js"></script>')
-            $('body').append('<script src="../controllers/task/status.js"></script>')
+            
             }
         })
     })

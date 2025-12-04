@@ -22,7 +22,9 @@ $(document).ready(function(){
             }
         })
 
-         $('.btn-update').click(function(e){
+    
+    })
+     $('.btn-update').click(function(e){
         e.preventDefault()
         var dados = $('#form-task').serialize()
         $.ajax({
@@ -42,6 +44,5 @@ $(document).ready(function(){
                 location.reload()
             }
         })
-    })
     })
 })
