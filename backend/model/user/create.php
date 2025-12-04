@@ -11,7 +11,7 @@ if (empty($_POST['NAME']) || empty($_POST['EMAIL'])  || empty($_POST['PASSWORD']
     );
 } else {
     try{
-    $sql = "INSERT INTO USER (NAME, EMAIL, PASSWORD, LEVEL) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO USER (NOME, EMAIL, PASSWORD, LEVEL) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
         $_POST['NAME'],

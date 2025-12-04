@@ -1,16 +1,17 @@
 <?php
 
 session_start();
+
 if(isset($_SESSION['ID']) && isset($_SESSION['NAME']) && isset($_SESSION['EMAIL'])
      && isset($_SESSION['LEVEL'])){
 $dados = array(
-        'type' => 'Sucesso!',
+        'type' => 'success',
         'message' => 'Usuario validado!'
     );
 }
 else {
 $dados = array(
-        'type' => 'Erro',
+        'type' => 'error',
         'message' => 'Usuario não validado'
     );
 }
