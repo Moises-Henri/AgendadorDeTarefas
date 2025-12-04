@@ -14,6 +14,7 @@
     <script src="../controllers/task/create.js" defer></script>
     <script src="../controllers/task/read.js" defer></script>
    
+   
 
 </head>
 <body>
@@ -112,7 +113,7 @@
                                         <td class="text-left">Tarefa 0000</td>
                                         <td class="text-center"><h5><span class="badge badge-primary">A Realizar</span></h5></td>
                                         <td class="text-center">
-                                            <button class="btn btn-info btn-view">
+                                            <button id="${dados}[i].ID"  class="btn btn-info btn-view">
                                                 <i class="fa-solid fa-eye"></i>
                                             </button>
                                             <button class="btn btn-primary btn-edit">

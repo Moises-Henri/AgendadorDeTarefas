@@ -1,6 +1,6 @@
 <?php
 
-include('../connection/conn.php');
+include('../../connection/conn.php');
 
 $sql = "SELECT * FROM TASK WHERE ID = ?";
 $stmt = $conn->prepare($sql);

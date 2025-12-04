@@ -1,7 +1,7 @@
 <?php
 
 include("../../connection/conn.php");
-$sql = "SELECT * FROM TASK";
+$sql = "SELECT * FROM TASK ORDER BY ID DESC";
 $stmt = $conn->prepare($sql);
 $stmt -> execute();
 

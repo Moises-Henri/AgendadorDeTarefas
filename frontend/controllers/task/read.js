@@ -1,20 +1,17 @@
 $(document).ready(function(){
 
-    $('.btn-save').click(function(e){
-        e.preventDefault()
-        var dados = $('#form-task').serialize()
-        console.log(dados)
         $.ajax({
             type: 'POST',
             dataType: 'JSON',
             async: true,
             url: '../../backend/model/task/read.php',
             success: function(dados){
+                console.log(dados)
             $('tbody').empty()
             for (var i = 0; i < dados.length; i++){
                 let nameStatus
                 let color
-                switch (dados[i].STATUS) {
+                switch (dados[i].STATUS.toString()) {
          case '1':
         nameStatus = 'Pendente'
         color = 'badge-primary'
@@ -25,7 +22,7 @@ $(document).ready(function(){
         break;
          case '3':
         nameStatus = 'Finalizada'
-        color = 'badge-sucess'
+        color = 'badge-success'
         break;
          case '4':
         nameStatus = 'Cancelada'
@@ -45,7 +42,7 @@ $(document).ready(function(){
                         <button id="${dados[i].ID}" class="btn btn-primary btn-edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
                         </button>
-                        <button id="${dados[i].ID}" data-status=${dados[i].STATUS} class="btn btn-warning btn-status">
+                        <button id="${dados[i].ID}" data-status="${dados[i].STATUS}" class="btn btn-warning btn-status">
                                 <i class="fa-solid fa-circle-check"></i>
                         </button>
                         <button id="${dados[i].ID}" class="btn btn-danger btn-delete">
@@ -64,4 +61,4 @@ $(document).ready(function(){
         })
     })
 
-})
+

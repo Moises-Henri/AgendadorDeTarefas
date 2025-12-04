@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-if(isset($_SESSION['ID'] && $_SESSION['NAME'] && $_SESSION['EMAIL'] && $_SESSION['LEVEL'])){
+if(isset($_SESSION['ID']) && isset($_SESSION['NAME']) && isset($_SESSION['EMAIL'])
+     && isset($_SESSION['LEVEL'])){
 $dados = array(
         'type' = 'Sucesso!',
         'message' = 'Usuario validado!'

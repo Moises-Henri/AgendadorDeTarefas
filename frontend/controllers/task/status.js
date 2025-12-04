@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('.btn-status').click(function (e) {
         e.preventDefault()
         var status = $(this).attr('data-status')
-        if(status < 3){
+        if(status <= 3){
             status ++;
             var dados = `ID=${$(this).attr('id')}&STATUS=${status}`;
             $.ajax({
