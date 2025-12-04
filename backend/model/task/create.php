@@ -1,6 +1,7 @@
 <?php
 
 include("../../connection/conn.php");
+session_start();
 
 if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
     $dados = array(
@@ -17,7 +18,7 @@ if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
         $_POST['TITLE'],
         $_POST['DESCRIPTION'],
         '1',
-        $_POST['USER_ID']
+        $_SESSION['ID']
     ]);
      $dados = array(
         "type" => "success",

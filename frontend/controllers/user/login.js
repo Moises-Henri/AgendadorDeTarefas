@@ -10,11 +10,15 @@ $(document).ready(function(){
         data: dados,
         url: 'backend/model/user/login.php',
         success: function (dados){
-            Swal.fire({
+            if(dados.type == 'error'){
+                Swal.fire({
                 icon: dados.type,
                 title: "SysTask",
                 text: dados.message
             });
+            } else {
+             window.location.href = "frontend/pages/dashboard.html"
+            }
         }
        })
     })

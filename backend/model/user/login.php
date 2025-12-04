@@ -25,8 +25,8 @@ $stmt->execute([
     );
  } 
 }
-$conn = null;
-echo json_encode($dados);
 
+echo json_encode($dados);
+$conn = null;
 
 ?>

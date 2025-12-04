@@ -1,7 +1,9 @@
 <?php
 
 include("../../connection/conn.php");
-$sql = "SELECT * FROM TASK ORDER BY ID DESC";
+session_start();
+
+$sql = "SELECT * FROM TASK WHERE USER_ID = ".$_SESSION['ID']." ORDER BY ID DESC";
 $stmt = $conn->prepare($sql);
 $stmt -> execute();
 
@@ -9,8 +11,8 @@ $stmt -> execute();
 $dados = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 
-
-echo json_encode($dados);
 $conn = null;
+echo json_encode($dados);
+
 
 ?>

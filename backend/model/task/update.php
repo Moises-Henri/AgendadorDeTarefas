@@ -1,6 +1,7 @@
 <?php
 
 include("../../connection/conn.php");
+session_start();
 date_default_timezone_set('America/Sao_Paulo');
 $dataLocal = date('Y-m-d H:i:s', time());
 
@@ -17,7 +18,7 @@ if (empty($_POST['TITLE'])  || empty($_POST['DESCRIPTION'])) {
     $stmt->execute([
         $_POST['TITLE'],
         $_POST['DESCRIPTION'],
-        $dataLocal,
+        $_POST['DATE_TIME'],
         $_POST['ID']
     ]);
      $dados = array(
