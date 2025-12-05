@@ -6,7 +6,7 @@ if(isset($_SESSION['ID']) && isset($_SESSION['NAME']) && isset($_SESSION['EMAIL'
      && isset($_SESSION['LEVEL'])){
 $dados = array(
         'type' => 'success',
-        'message' => 'Usuario validado!'
+        'message' => 'Seja Bem-Vindo!'
     );
 }
 else {

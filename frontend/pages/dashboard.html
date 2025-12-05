@@ -17,6 +17,9 @@
     <script src="../controllers/task/update.js" defer></script>
     <script src="../controllers/task/delete.js" defer></script>
     <script src="../controllers/task/status.js" defer></script>
+    <script src="../controllers/user/validate.js" defer></script>
+    <script src="../controllers/user/logout.js" defer></script>
+    <script src="../controllers/task/kpi.js" defer></script>
 
     
    
@@ -42,6 +45,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#"><i class="fa-solid fa-user"></i> Perfil</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white btn-logout" href="#"><i class="fa-solid fa-angle-left"></i> Sair do Sistena</a>
+                </li>
             </ul>
         </div>
 
@@ -52,7 +58,7 @@
             <div class="col-12 col-sm-3 col-md-3 mt-3 mt-sm-5 mt-md-5">
                 <div class="alert alert-primary p-3 text-center shadow">
                     <h1 class="text-center">
-                        <i class="fa-solid fa-bars-progress"></i> 10
+                        <i class="fa-solid fa-bars-progress"></i> <span id="pendentes">00</span>
                     </h1>
                     <span class="text-center">Tarefas a realizar</span>
                 </div>
@@ -61,7 +67,7 @@
             <div class="col-12 col-sm-3 col-md-3 mt-sm-5 mt-md-5">
                 <div class="alert alert-warning p-3 text-center shadow">
                     <h1 class="text-center">
-                        <i class="fa-solid fa-list-check"></i> 08
+                        <i class="fa-solid fa-list-check"></i> <span id="andamentos">00</span> 
                     </h1>
                     <span class="text-center">Tarefas em andamento</span>
                 </div>
@@ -70,7 +76,7 @@
             <div class="col-12 col-sm-3 col-md-3 mt-sm-5 mt-md-5">
                 <div class="alert alert-success p-3 text-center shadow">
                     <h1 class="text-center">
-                        <i class="fa-solid fa-thumbs-up"></i> 15
+                        <i class="fa-solid fa-thumbs-up"></i> <span id="finalizados">00</span> 
                     </h1>
                     <span class="text-center">Tarefas finalizadas</span>
                 </div>
@@ -79,7 +85,7 @@
             <div class="col-12 col-sm-3 col-md-3 mt-sm-5 mt-md-5">
                 <div class="alert alert-danger p-3 text-center shadow">
                     <h1 class="text-center">
-                        <i class="fa-solid fa-trash-can"></i> 09
+                        <i class="fa-solid fa-trash-can"></i> <span id="cancelados">00</span> 
                     </h1>
                     <span class="text-center">Tarefas canceladas</span>
                 </div>
